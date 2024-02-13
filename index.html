@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Login box container -->
+    <div class="login-box">
+        <h2>Login Form</h2>
+        <form id="login-form">
+            <!-- Container for the username input -->
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Username</label>
+            </div>
+            <!-- Container for the password input -->
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+            <!-- Container for the remember me checkbox -->
+            <div class="remember-box">
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <div class="other-links">
+                <a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <button type="submit" class="submit">SUBMIT</button>
+                    <a href="#">
+                        <span></span>
+                        <button type="reset" class="Cancel">CANCEL</button></a>
+                    <a class="sign" href="signup.html">signup</a>
+                    <a class="forgot" href="forgotpass.html">forgot password?</a>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

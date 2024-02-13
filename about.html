@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-OgVRvuATP1z7JjHLkuOU0XhGpy6g1r6lX+6hubTid31E8W6/0RvvoPjKVwUtI9UO" crossorigin="anonymous">
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(132deg, rgb(59, 55, 106) 0.00%, rgb(0, 143, 186) 50.00%, rgb(255, 149, 213) 100.00%);
+        }
+        
+        .about-me {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+            animation: border-anim 5s Linear infinite;
+            animation: border2-anim 5s Linear infinite;
+        }
+        
+        .about-me h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .about-me p {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .back-button {
+            display: block;
+            margin: 0 auto;
+            background-color: #03e9f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        /* Media queries */
+        
+        @media(max-width: 768px) {
+            .about-me {
+                max-width: 600px;
+            }
+        }
+        
+        @media(max-width: 576px) {
+            .about-me {
+                padding: 20px;
+                max-width: 100%;
+            }
+            .about-me h2 {
+                font-size: 24px;
+            }
+            .back-button {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function typeWriter(element, index, callback) {
+            if (index < element.text.length) {
+                element.html += element.text.charAt(index);
+                element.container.innerHTML = element.html;
+                setTimeout(typeWriter, 50, element, index + 1, callback);
+            } else if (callback) {
+                callback();
+            }
+        }
+
+        function startTyping() {
+            var aboutMeTexts = document.querySelectorAll(".about-me > p");
+            var textArray = Array.from(aboutMeTexts).map((el) => {
+                el.style.display = 'block';
+                return {
+                    container: el,
+                    text: el.innerText,
+                    html: ''
+                };
+            });
+            typeWriter(textArray[0], 0, function() {
+                typeWriter(textArray[1], 0);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", startTyping);
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="about-me">
+                    <h2 class="text-center">About Me</h2>
+                    <p>This is a website created as a sample for my first HTML class. It includes information about me, the courses I am taking, and the subjects I am studying.</p>
+                    <p>I am a student in BSIT YEAR 1 and I am from Lower Ambangeg, Daclan, Bokod, Benguet. I enjoy watching anime and reading manga/manhwa in my free time.</p>
+                    <button class="btn btn-primary btn-block" onclick="location.href='home.html'">Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

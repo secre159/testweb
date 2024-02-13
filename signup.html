@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(132deg, rgb(59, 55, 106) 0.00%, rgb(0, 143, 186) 50.00%, rgb(255, 149, 213) 100.00%);
+        }
+        
+        .signup-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(92, 58, 58, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+            animation: border-anim 5s Linear infinite;
+            animation: border2-anim 5s Linear infinite;
+        }
+        
+        .signup-box h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .user-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 16px;
+            color: #03e9f4;
+            padding: 10px;
+            pointer-events: none;
+            transition: all 0.3s ease-out;
+        }
+        
+        .user-box input[type="text"],
+        .user-box input[type="email"],
+        .user-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid #d2e5e6;
+            transition: all 0.3s ease-out;
+            background-color: transparent;
+            outline: none;
+        }
+        
+        .user-box input:focus~label,
+        .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+        
+        .submit {
+            background-color: #03e9f4;
+            color: rgb(75, 183, 232);
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+            position: relative;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: 4px;
+            background-color: transparent;
+        }
+        
+        .submit:hover {
+            background-color: #03c3f9;
+            background-color: #01c8f1;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+        }
+        
+        .back-button {
+            background-color: #03e9f4;
+            color: rgb(75, 183, 232);
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+            position: relative;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: 4px;
+            background-color: transparent;
+        }
+        
+        .back-button:hover {
+            background-color: #03c3f9;
+            background-color: #01c8f1;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+        }
+        
+        @keyframes border-anim {
+            0% {
+                box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            }
+            50%,
+            100% {
+                box-shadow: 0 15px 25px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+            }
+        }
+        
+        @keyframes border2-anim {
+            0% {
+                box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            }
+            25%,
+            50% {
+                box-shadow: 0 15px 25px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-box">
+        <h2>Sign Up Form</h2>
+        <form action="#">
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="email" name="email" required="">
+                <label id="box">Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button class="submit">SUBMIT</button>
+            </a>
+        </form>
+    </div>
+    <div style="position: fixed; top: 0; left: 0;">
+        <a href="index.html"><button class="back-button">Back</button></a>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
